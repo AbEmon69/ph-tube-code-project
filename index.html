@@ -7,6 +7,8 @@
   <title>Ph tube</title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -17,7 +19,7 @@
       </div>
        <div>
         <label class="input input-bordered flex items-center gap-2">
-          <input type="text" class="grow" placeholder="Search" />
+          <input id="search-box" type="text" class="grow" placeholder="Search"/>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -32,9 +34,28 @@
        </div>
        <div class="btn">sort</div>
     </nav>
-    <nav id="categories" class=" gap-2  py-3 justify-center flex">
-    </nav>
+   
   </header>
+  <main>
+     <nav id="categories" class=" gap-2  py-3 justify-center flex">
+     </nav>
+   <section id="video" class=" w-11/12 mx-auto grid lg:grid-cols-4 gap-5 py-10"></section>
+  </main>
+
+  <!-- Open the modal using ID.showModal() method -->
+<button id="showModalData" class="btn hidden" onclick="customModal.showModal()">open modal</button>
+<dialog id="customModal" class="modal">
+  <div class="modal-box">
+   <div id="modal-content"></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+ 
   <script src="script/video.js"></script>
 </body>
 
